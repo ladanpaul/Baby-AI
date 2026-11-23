@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --baby-bg: #f4ecdf;
+    --baby-surface: rgba(255, 248, 240, 0.72);
+    --baby-surface-strong: rgba(255, 251, 246, 0.92);
+    --baby-stroke: rgba(48, 34, 22, 0.12);
+    --baby-ink: #211913;
+    --baby-muted: #61554a;
+    --baby-accent: #d86a2c;
+    --baby-accent-soft: #f5dcc8;
+    --baby-highlight: #0d7a64;
+  }
+
+  html {
+    @apply h-full scroll-smooth;
+  }
+
+  body {
+    @apply min-h-full bg-[var(--baby-bg)] text-[var(--baby-ink)] antialiased;
+    font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background-color: rgba(216, 106, 44, 0.22);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border shadow-[0_24px_80px_rgba(54,37,22,0.08)] backdrop-blur-xl;
+    background-color: var(--baby-surface);
+    border-color: var(--baby-stroke);
+  }
+
+  .soft-input {
+    @apply w-full rounded-[1.25rem] border bg-white/65 px-4 py-3 text-sm text-[var(--baby-ink)] outline-none transition duration-200 placeholder:text-[var(--baby-muted)];
+    border-color: rgba(48, 34, 22, 0.12);
+  }
+
+  .soft-input:focus {
+    @apply ring-2;
+    border-color: rgba(216, 106, 44, 0.35);
+    ring-color: rgba(216, 106, 44, 0.18);
+  }
+}
